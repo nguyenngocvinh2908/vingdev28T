@@ -29,14 +29,14 @@ dataBase.connect()
 app.set('view engine', 'pug')
 app.set('views', `${__dirname}/views`)
 
+// Public Folder Setup
+app.use(express.static(`${__dirname}/public`))
+
 // Routes Setup
 const clientRoutes = require('./routes/client/index')
 clientRoutes(app)
 const adminRoutes = require('./routes/admin/index')
 adminRoutes(app)
-
-// Public Folder Setup
-app.use(express.static(`${__dirname}/public`))
 
 // App Variable Local
 const systemConfig = require("./config/system.js")
