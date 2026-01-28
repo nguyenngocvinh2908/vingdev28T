@@ -44,6 +44,4 @@ const session = require('express-session')
 app.locals.prefixAdmin = systemConfig.prefixAdmin
 
 // Start Server
-app.listen(post, () => {
-  console.log(`Server is running on port ${post}`)
-})
+module.exports = app
