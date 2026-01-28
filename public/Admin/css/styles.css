@@ -1,0 +1,1356 @@
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #2c3e50;
+}
+
+/* ==========================================
+   HEADER STYLES
+   ========================================== */
+header.header {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid #e0e8ff;
+}
+
+header.header .container-fluid {
+    padding: 0 20px;
+}
+
+header.header .row {
+    margin: 0;
+}
+
+header.header [class*='col-'] {
+    padding: 0;
+}
+
+.header .inner-logo {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.header .inner-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.header .inner-logo a:hover {
+    transform: scale(1.08);
+}
+
+.header .inner-logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* ==========================================
+   BODY LAYOUT
+   ========================================== */
+.body {
+    display: flex;
+    min-height: calc(100vh - 120px);
+}
+
+/* ==========================================
+   SIDEBAR STYLES
+   ========================================== */
+.sider {
+    width: 260px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+    border-right: 1px solid #e0e8ff;
+    padding: 20px 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+    min-height: calc(100vh - 60px);
+}
+
+.sider .inner-menu {
+    padding: 0;
+}
+
+.sider .inner-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sider .inner-menu li {
+    margin: 0;
+}
+
+.sider .inner-menu a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    position: relative;
+}
+
+.sider .inner-menu a:hover {
+    background: linear-gradient(90deg, #f0f4ff 0%, transparent 100%);
+    color: #4a90e2;
+    border-left-color: #4a90e2;
+}
+
+.sider .inner-menu a.active {
+    background: linear-gradient(90deg, #e8f0ff 0%, transparent 100%);
+    color: #4a90e2;
+    border-left-color: #4a90e2;
+    font-weight: 600;
+}
+
+.sider .inner-menu i {
+    width: 20px;
+    margin-right: 12px;
+    text-align: center;
+}
+
+/* ==========================================
+   MAIN CONTENT AREA
+   ========================================== */
+.main {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* ==========================================
+   PAGE TITLE STYLES
+   ========================================== */
+.main h1 {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   CARD STYLES
+   ========================================== */
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e8ff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.12);
+    border-color: #4a90e2;
+}
+
+/* ==========================================
+   CARD HEADER STYLES
+   ========================================== */
+.card-header {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #ffffff;
+    padding: 18px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: none;
+}
+
+/* ==========================================
+   CARD BODY STYLES
+   ========================================== */
+.card-body {
+    padding: 25px;
+}
+
+.card-body .row {
+    margin: 0 -12px;
+}
+
+.card-body .col-6 {
+    padding: 0 12px;
+}
+
+/* ==========================================
+   FILTER BUTTONS GROUP
+   ========================================== */
+.card-body .col-6:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.card-body .btn {
+    padding: 10px 24px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* Active/Choose Button */
+.btn-choose {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #ffffff;
+    border-color: #4a90e2;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25);
+}
+
+.btn-choose:hover {
+    background: linear-gradient(135deg, #357abd 0%, #2a5a8f 100%);
+    border-color: #2a5a8f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(74, 144, 226, 0.35);
+}
+
+.btn-choose:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+}
+
+/* Inactive/Not Choose Button */
+.btn-nochoose {
+    background: #ffffff;
+    color: #2c3e50;
+    border-color: #e0e8ff;
+    font-weight: 600;
+}
+
+.btn-nochoose:hover {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 100%);
+    color: #4a90e2;
+    border-color: #4a90e2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+}
+
+.btn-nochoose:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   SEARCH FORM STYLES
+   ========================================== */
+#form-search {
+    width: 100%;
+}
+
+.search-group {
+    display: flex;
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e8ff;
+    transition: all 0.3s ease;
+    background: #ffffff;
+}
+
+#form-search:focus-within .search-group {
+    box-shadow: 0 4px 16px rgba(74, 144, 226, 0.2);
+    border-color: #4a90e2;
+}
+
+/* ==========================================
+   INPUT STYLES
+   ========================================== */
+.input-search {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #2c3e50;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.input-search::placeholder {
+    color: #a0aec0;
+    font-weight: 400;
+}
+
+.input-search:focus {
+    background: #f8faff;
+}
+
+.input-search:focus::placeholder {
+    color: #cbd5e0;
+}
+
+/* ==========================================
+   INPUT GROUP APPEND
+   ========================================== */
+.input-group-append {
+    display: flex;
+    align-items: center;
+}
+
+/* ==========================================
+   SEARCH BUTTON STYLES
+   ========================================== */
+.btn-search {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.btn-search:hover {
+    background: linear-gradient(135deg, #357abd 0%, #2a5a8f 100%);
+    transform: translateX(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.btn-search:active {
+    transform: translateX(0);
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+}
+
+.btn-search:disabled {
+    background: linear-gradient(135deg, #cbd5e0 0%, #a0aec0 100%);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ==========================================
+   TABLE CONTAINER
+   ========================================== */
+.table-container {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    border: 1px solid #e0e8ff;
+    margin-bottom: 25px;
+}
+
+/* ==========================================
+   TABLE STYLES
+   ========================================== */
+.product-table {
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+/* ==========================================
+   TABLE HEAD STYLES
+   ========================================== */
+.product-table .product-thead {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+}
+
+.product-table .product-thead .product-th {
+    color: #ffffff;
+    font-weight: 700;
+    padding: 18px 15px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+/* ==========================================
+   TABLE BODY STYLES
+   ========================================== */
+.product-table .product-tbody {
+    background: #ffffff;
+}
+
+.product-table .product-tbody .product-tr {
+    border-bottom: 1px solid #f0f4ff;
+    transition: all 0.2s ease;
+}
+
+.product-table .product-tbody .product-tr:last-child {
+    border-bottom: none;
+}
+
+.product-table .product-tbody .product-tr:hover {
+    background: #f8faff;
+    box-shadow: inset 0 2px 8px rgba(74, 144, 226, 0.08);
+}
+
+.product-table .product-tbody td {
+    padding: 18px 15px;
+    vertical-align: middle;
+    color: #555;
+    font-size: 14px;
+}
+
+/* ==========================================
+   PRODUCT IMAGE STYLES
+   ========================================== */
+.product-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #e0e8ff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.product-table .product-tbody .product-tr:hover .product-image {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================
+   BADGE STATUS STYLES
+   ========================================== */
+.badge-active {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #d5f4e6 0%, #c8ede0 100%);
+    color: #1e8449;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid #a9dfbf;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.badge-active:hover {
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    color: #ffffff;
+    border-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+}
+
+.badge-inactive {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%);
+    color: #a93226;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid #f5b7b1;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.badge-inactive:hover {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: #ffffff;
+    border-color: #e74c3c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* ==========================================
+   BUTTON STYLES
+   ========================================== */
+.product-table .product-tbody td .btn {
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-table .product-tbody td .btn:last-child {
+    margin-right: 0;
+}
+
+/* Edit Button */
+.btn-edit {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #ffffff;
+}
+
+.btn-edit:hover {
+    background: linear-gradient(135deg, #357abd 0%, #2a5a8f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+    color: #ffffff;
+}
+
+.btn-edit:active {
+    transform: translateY(0);
+}
+
+/* Detail Button */
+.btn-detail {
+    background:#27ae60;
+    color: #fff;
+}
+
+.btn-detail:hover {
+    background: #1e8449;
+    transform: translateY(-2px);
+    color: #fff
+}
+
+/* Delete Button */
+.btn-delete {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: #ffffff;
+}
+
+.btn-delete:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    color: #ffffff;
+}
+
+.btn-delete:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   FOOTER STYLES
+   ========================================== */
+footer {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+    color: #2c3e50;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e0e8ff;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.06);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ==========================================
+   SCROLLBAR STYLES
+   ========================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5f7fa;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+.table-responsive::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f5f7fa;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+/* ==========================================
+   CREATE FORM STYLES
+   ========================================== */
+.form-create {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #e0e8ff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-create:hover {
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.12);
+    border-color: #4a90e2;
+}
+
+/* ==========================================
+   FORM GROUP STYLES
+   ========================================== */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group.form-check {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+/* ==========================================
+   LABEL STYLES
+   ========================================== */
+.label {
+    display: block;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.form-group.form-check .label {
+    display: inline;
+    margin-bottom: 0;
+    margin-left: 8px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+/* ==========================================
+   INPUT STYLES
+   ========================================== */
+.input-create,
+.input-desc,
+.input-number,
+.input-discount,
+.input-stock,
+.input-thumbnail,
+.input-position,
+.input-image {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e0e8ff;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #2c3e50;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-create:focus,
+.input-desc:focus,
+.input-number:focus,
+.input-discount:focus,
+.input-stock:focus,
+.input-thumbnail:focus,
+.input-position:focus,
+.input-image:focus  {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+    outline: none;
+    background: #f8faff;
+}
+
+.input-create::placeholder,
+.input-desc::placeholder,
+.input-number::placeholder,
+.input-discount::placeholder,
+.input-stock::placeholder,
+.input-thumbnail::placeholder,
+.input-position::placeholder,
+.input-image:focus  {
+    color: #a0aec0;
+    font-weight: 400;
+}
+
+/* Textarea specific styles */
+.input-desc {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+/* Number input styles */
+.input-number,
+.input-discount,
+.input-stock,
+.input-position {
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Remove number input spinners */
+.input-number::-webkit-outer-spin-button,
+.input-number::-webkit-inner-spin-button,
+.input-discount::-webkit-outer-spin-button,
+.input-discount::-webkit-inner-spin-button,
+.input-stock::-webkit-outer-spin-button,
+.input-stock::-webkit-inner-spin-button,
+.input-position::-webkit-outer-spin-button,
+.input-position::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-number[type="number"],
+.input-discount[type="number"],
+.input-stock[type="number"],
+.input-position[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* ==========================================
+   RADIO INPUT STYLES
+   ========================================== */
+.input-radio {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #4a90e2;
+    transition: all 0.3s ease;
+}
+
+.input-radio:hover {
+    accent-color: #357abd;
+}
+
+.form-group.form-check .label {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.form-group.form-check .input-radio:checked + .label {
+    color: #4a90e2;
+    font-weight: 700;
+}
+
+/* ==========================================
+   SUBMIT BUTTON STYLES
+   ========================================== */
+.btn-form-create {
+    width: 100%;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25);
+    margin-top: 10px;
+}
+
+.btn-form-create:hover {
+    background: linear-gradient(135deg, #357abd 0%, #2a5a8f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(74, 144, 226, 0.35);
+}
+
+.btn-form-create:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+}
+
+.btn-form-create:disabled {
+    background: linear-gradient(135deg, #cbd5e0 0%, #a0aec0 100%);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+}
+
+/* ==========================================
+   ADD PRODUCT BUTTON STYLES
+   ========================================== */
+.btn-add-product {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px !important;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.25);
+}
+
+.btn-add-product:before {
+    content: '+';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.btn-add-product:hover {
+    background: linear-gradient(135deg, #1e8449 0%, #145a32 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(39, 174, 96, 0.35);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.btn-add-product:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.2);
+}
+
+/* ==========================================
+   NUMBER INPUT STYLES
+   ========================================== */
+.box-position {
+    width: 60px;
+    padding: 10px 12px;
+    border: 1px solid #e0e8ff;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2c3e50;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+.box-position:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+    outline: none;
+    background: #f8faff;
+}
+
+.box-position:hover {
+    border-color: #cbd5e0;
+}
+
+/* Remove number input spinners */
+.box-position::-webkit-outer-spin-button,
+.box-position::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.box-position[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* ==========================================
+   BULK ACTION FORM STYLES
+   ========================================== */
+form[form-change-multi] {
+    margin-bottom: 25px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0e8ff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+form[form-change-multi]:hover {
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.12);
+    border-color: #4a90e2;
+}
+
+.form-group-inner {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.form-group-inner .form-group {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 0;
+}
+
+.form-label {
+    display: block;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e8ff;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #2c3e50;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.form-control:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+    outline: none;
+    background: #f8faff;
+}
+
+.form-control::placeholder {
+    color: #a0aec0;
+    font-weight: 400;
+}
+
+.form-control option {
+    color: #2c3e50;
+    background: #ffffff;
+    padding: 10px;
+}
+
+/* Apply Button in Form */
+form[form-change-multi] .btn-search {
+    padding: 12px 28px;
+    white-space: nowrap;
+    align-self: flex-end;
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   PAGINATION STYLES
+   ========================================== */
+.nav-navigation {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.navigations {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.page-item {
+    margin: 0;
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    padding: 10px 14px;
+    background: #ffffff;
+    color: #2c3e50;
+    border: 2px solid #e0e8ff;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+}
+
+.page-link:hover {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 100%);
+    color: #4a90e2;
+    border-color: #4a90e2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+}
+
+.page-link:active {
+    transform: translateY(0);
+}
+
+/* Active Page Link */
+.page-link.active {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #ffffff;
+    border-color: #4a90e2;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25);
+}
+
+.page-link.active:hover {
+    background: linear-gradient(135deg, #357abd 0%, #2a5a8f 100%);
+    border-color: #2a5a8f;
+    box-shadow: 0 6px 16px rgba(74, 144, 226, 0.35);
+}
+
+/* Disabled Page Link */
+.page-link:disabled,
+.page-link.disabled {
+    background: #f5f7fa;
+    color: #a0aec0;
+    border-color: #e0e8ff;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.page-link:disabled:hover,
+.page-link.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* ==========================================
+   IMAGE UPLOAD PREVIEW STYLES
+   ========================================== */
+.upload-image-preview {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    border: 2px solid #e0e8ff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    object-fit: contain;
+    background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+    padding: 10px;
+    display: block;
+    margin-top: 12px;
+}
+
+.upload-image-preview:hover {
+    border-color: #4a90e2;
+    box-shadow: 0 4px 16px rgba(74, 144, 226, 0.2);
+    transform: scale(1.02);
+}
+
+/* Show/Hide preview based on src attribute */
+.upload-image-preview[src=""],
+.upload-image-preview:not([src]) {
+    display: none;
+}
+
+
+/* ==========================================
+   ANIMATION
+   ========================================== */
+@keyframes searchPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(74, 144, 226, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 144, 226, 0);
+    }
+}
+
+.btn-search.loading {
+    animation: searchPulse 1.5s infinite;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 1024px) {
+    .product-table .product-thead .product-th,
+    .product-table .product-tbody td {
+        padding: 15px 12px;
+        font-size: 13px;
+    }
+
+    .product-image {
+        width: 45px;
+        height: 45px;
+    }
+
+    .product-table .product-tbody td .btn {
+        padding: 6px 12px;
+        font-size: 11px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-body .row {
+        flex-direction: column;
+    }
+
+    .card-body .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 12px 0;
+        margin-bottom: 10px;
+    }
+
+    .card-body .col-6:first-child {
+        border-bottom: 1px solid #e0e8ff;
+        padding-bottom: 20px;
+    }
+
+    .card-body .col-6:last-child {
+        padding-top: 10px;
+    }
+
+    form[form-change-multi] {
+        flex-direction: column;
+    }
+
+    .form-group-inner {
+        flex-direction: column;
+    }
+
+    .form-group-inner .form-group {
+        width: 100%;
+    }
+
+    form[form-change-multi] .btn-search {
+        width: 100%;
+        align-self: stretch;
+    }
+}
+
+@media (max-width: 768px) {
+    .main h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .form-create {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .input-create,
+    .input-desc,
+    .input-number,
+    .input-discount,
+    .input-stock,
+    .input-thumbnail,
+    .input-position {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .input-desc {
+        min-height: 100px;
+    }
+
+    .btn-form-create {
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-header {
+        padding: 15px 16px;
+        font-size: 14px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+
+    .card-body .btn {
+        padding: 8px 18px;
+        font-size: 12px;
+    }
+
+    .search-group {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .input-search {
+        padding: 12px 16px;
+        font-size: 13px;
+        border-bottom: 1px solid #e0e8ff;
+    }
+
+    .btn-search {
+        padding: 12px 20px;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .product-table {
+        font-size: 12px;
+    }
+
+    .product-table .product-thead .product-th {
+        padding: 12px 8px;
+        font-size: 11px;
+    }
+
+    .product-table .product-tbody td {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+
+    .product-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .product-table .product-tbody td .btn {
+        padding: 5px 10px;
+        font-size: 10px;
+        margin-right: 4px;
+    }
+
+    .badge-active,
+    .badge-inactive {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .sider {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e8ff;
+        padding: 10px 0;
+        max-height: 60px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        min-height: auto;
+    }
+
+    .sider .inner-menu ul {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .sider .inner-menu a {
+        padding: 10px 15px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .body {
+        flex-direction: column;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .main h1 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-body .col-6:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .card-body .btn {
+        width: 100%;
+        padding: 10px 16px;
+    }
+
+    .input-search {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .btn-search {
+        padding: 12px 16px;
+        font-size: 11px;
+    }
+
+    .navigations {
+        gap: 6px;
+    }
+
+    .page-link {
+        min-width: 40px;
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}

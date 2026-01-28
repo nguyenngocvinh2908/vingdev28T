@@ -1,0 +1,38 @@
+extends ../../layouts/default.pug
+include ../../mixins/alert.pug
+
+block main
+  +alert-success(3000)
+  +alert-error(3000)
+  h1 #{pageTitle}
+  form(action=`${prefixAdmin}/products/edit/${idProduct._id }?_method=PATCH` class="form-create" id="form-edit-product" method="POST" enctype="multipart/form-data")
+    .form-group
+      label(for="title" class="label") Title
+      input(type="text" class="input-create" id="title" name="title" value=idProduct.title)
+    .form-group
+      label(for="desc" class="label") Description
+      textarea(name="desc" class="input-desc" id="desc" rows="5") #{idProduct.description}
+    .form-group
+      label(for="price" class="label") Price
+      input(type="number" class="input-number" id="price" name="price" value=idProduct.price min="0")
+    .form-group
+      label(for="discount" class="label") Perent Discount
+      input(type="number" class="input-discount" id="discount" name="discountPercentage" value=idProduct.discountPercentage)
+    .form-group
+      label(for="stock" class="label") Quantity
+      input(type="number" class="input-stock" id="stock" name="stock" value=idProduct.stock)
+    div(class="form-group" upload-image)
+      label(for="thumbnail" class="label") Thumbnail
+      input(type="file" class="input-thumbnail" id="thumbnail" name="thumbnail" accept="image/*" upload-image-input)
+      img(src=idProduct.thumbnail alt="" class="upload-image-preview" upload-image-preview)
+    .form-group
+      label(for="position" class="label") Position
+      input(type="number" class="input-position" id="position" name="position" min="1" placeholder="Auto Increament" value=idProduct.position)
+    .form-group.form-check
+      input(type="radio" class="input-radio" id="statusActive" name="status" value="active" checked= idProduct.status === 'active')
+      label(for="statusActive" class="label") Active
+    .form-group.form-check
+      input(type="radio" class="input-radio" id="statusInactive" name="status" value="inactive" checked= idProduct.status === 'inactive')
+      label(for="statusInactive" class="label") Inactive
+    .form-group
+      button(type="submit" class="btn btn-form-create") Edit Product

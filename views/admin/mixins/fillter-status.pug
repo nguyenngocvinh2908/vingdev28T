@@ -1,0 +1,3 @@
+mixin fillterStatus(fills)
+  each fill in fills
+    button(class=`btn ${fill.class == "" ? "btn-nochoose" : "btn-choose"}` data-status=fill.status) #{fill.name}

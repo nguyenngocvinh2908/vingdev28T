@@ -1,0 +1,15 @@
+mixin form-change-status-multi(action)
+  form(action=action method="POST" form-change-multi)
+    .form-group-inner
+      .form-group
+        label.form-label Status
+        select(name="type" class="form-control")
+          option(disabled selected) Select Action
+          option(value="active") Active
+          option(value="inactive") Inactive
+          option(value="delete-all") Delete
+          option(value="position") Position
+      .form-group.form-group-none
+        lebel.form-label ID Product
+        input(type="text" name="ids" value="", class="form-control")
+      button(type="submit" class="btn btn-search") Apply

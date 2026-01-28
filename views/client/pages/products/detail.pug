@@ -1,0 +1,16 @@
+extends ../../layouts/default.pug
+
+block main
+  h1 #{pageTitle}
+  .card-detail
+    .container
+      .row
+        .col-6
+          .image-container
+            img(src=product.thumbnail, alt="Product Image" class="product-image-detail")
+        .col-6
+          .content-container
+            h2.detail-name #{product.title}
+            p.detail-desc #{product.description}
+            p.detail-stock #{product.stock}
+            h3.detail-price Price: #{product.price} VND

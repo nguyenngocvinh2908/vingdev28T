@@ -1,0 +1,66 @@
+extends ../../layouts/default.pug
+include ../../mixins/fillter-status.pug
+include ../../mixins/pavigation.pug
+include ../../mixins/change-status-multi.pug
+include ../../mixins/alert.pug
+block main
+  +alert-success(3000)
+  +alert-error(3000) 
+  h1 Danh Sách Sản Phẩm
+  .card
+    .card-header Fill And Search
+    .card-body
+      .row
+        .col-4
+          +fillterStatus(fills)
+        .col-6
+          form(id="form-search")
+            .search-group
+              input(type="text" placeholder="Search..." name="keyword" value=keyword  class="input-search")
+              .input-group-append
+                button(class="btn btn-search" type="submit") Search
+        .col-2
+          a(href=`${prefixAdmin}/products/create` class="btn btn-add-product") Add Product
+  .card
+    .card-header Select Apply For Product
+    .card-body
+      +form-change-status-multi(`${prefixAdmin}/products/change-multi?_method=PATCH`)
+  table(class="table product-table table-container" checkbox-multi)
+    thead.product-thead
+      tr.product-tr
+        th.product-th
+          input(type="checkbox" name="checkall")
+        th.product-th STT
+        th.product-th Images
+        th.product-th Name
+        th.product-th Price
+        th.product-th Position
+        th.product-th Status
+        th.product-th Actions
+    tbody(class="product-tbody")
+      each item, index in products
+        tr.product-tr
+          td
+            input(type="checkbox" value=item.id name="id")
+          td #{index + 1}
+          td
+            img(src=item.thumbnail, alt="Sản Phẩm 1" class="product-image")
+          td #{item.title}
+          td #{item.price}$
+          td
+            input(type="number" value=item.position min="1" name="position" style="width: 60px" class="box-position")
+          td
+            a(href="javascript:;" 
+              class= item.status=="active" ? "badge-active" : "badge-inactive" 
+              data-status=item.status
+              data-id=item.id
+              button-change-status
+            ) #{item.status}
+          td
+            a(href=`${prefixAdmin}/products/edit/${item.id}` class="btn btn-edit") Edit
+            a(href=`${prefixAdmin}/products/detail/${item.id}` class="btn btn-detail") Detail
+            button(class="btn btn-delete" button-delete data-id=item.id) Delete
+  +pavigation(pavigation)
+
+  form(action="" method="POST" id="form-change-status" data-path=`${prefixAdmin}/products/change-status`)
+  form(action="" method="POST" id="form-delete" data-path=`${prefixAdmin}/products/delete`)

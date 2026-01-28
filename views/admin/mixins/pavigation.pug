@@ -1,0 +1,12 @@
+mixin pavigation(pavigation)
+  nav.nav-navigation
+    ul.navigations
+      if(pavigation.currentPage > 1)
+        li.page-item
+        button(class="page-link" data-numberpage= pavigation.currentPage - 1) Previous
+      - for(let i = 1 ; i <= pavigation.totalPage ; i++)
+          li.page-item
+            button( class=`page-link ${i == pavigation.currentPage ? "active" : ""}` data-numberpage=i ) #{i}
+      if(pavigation.currentPage < pavigation.totalPage)
+        li.page-item
+        button(class="page-link" data-numberpage= pavigation.currentPage + 1) Next

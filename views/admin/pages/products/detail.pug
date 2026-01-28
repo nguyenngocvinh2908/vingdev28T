@@ -1,0 +1,30 @@
+extends ../../layouts/default.pug
+
+block main
+  .card
+    .card-header #{pageTitle}
+    .card-body
+      .detail-group
+        label.detail-label Title:
+        span.detail-span #{productDetail.title}
+      .detail-group
+        label.detail-label Description:
+        p #{productDetail.description}
+      .detail-group
+        label.detail-label Price:
+        span.detail-span #{productDetail.price}$
+      .detail-group
+        label.detail-label Perent Discount:
+        span.detail-span #{productDetail.discountPercentage}%
+      .detail-group
+        label.detail-label Quantity:
+        span.detail-span #{productDetail.stock}
+      .detail-group
+        label.detail-label Thumbnail:
+        img(src=productDetail.thumbnail alt="Product Thumbnail" class="detail-thumbnail")
+      .detail-group
+        label.detail-label Position:
+        span.detail-span #{productDetail.position}
+      .detail-group
+        label.detail-label Status:
+        span.detail-span #{productDetail.status}
